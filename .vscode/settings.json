@@ -1,0 +1,4 @@
+{
+    "editor.formatOnSave": true,
+    "zig.zls.path": "/usr/local/bin/zls"
+}

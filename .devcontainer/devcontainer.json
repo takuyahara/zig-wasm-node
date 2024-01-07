@@ -1,0 +1,19 @@
+{
+	"name": "zig-wasm-node",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ziglang.vscode-zig",
+				"dtsvet.vscode-wasm"
+			]
+		}
+	},
+	"containerEnv": {
+		"TZ": "Asia/Tokyo"
+	},
+	"postCreateCommand": "/bin/sh .devcontainer/postCreateCommand.sh"
+}
