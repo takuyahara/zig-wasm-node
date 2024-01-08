@@ -1,21 +1,25 @@
 .PHONY: clean
-## `rm -f main.wasm main.wasm.o`
+## rm -f main.wasm main.wasm.o
 clean:
 	rm -f main.wasm main.wasm.o
 
 .PHONY: build
-## `zig build-lib ... src/main.zig`
+## zig build-exe \
+##     src/main.zig \
+##     -target wasm32-freestanding \
+##     -fno-entry \
+##     -rdynamic \
+##     -O ReleaseSmall
 build:
-	zig build-lib \
-		-O ReleaseSmall \
-		-target wasm32-wasi \
-		-dynamic \
-		--export=test1 \
-		--export=test2 \
-		src/main.zig
+	zig build-exe \
+		src/main.zig \
+		-target wasm32-freestanding \
+		-fno-entry \
+		-rdynamic \
+		-O ReleaseSmall
 
 .PHONY: run
-## `node main.js`
+## node main.js
 run:
 	node main.js
 

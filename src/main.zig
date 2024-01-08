@@ -1,14 +1,3 @@
-const std = @import("std");
-
-pub fn main() anyerror!void {
-    const stdout = std.io.getStdOut().writer();
-    try stdout.print("Hello, World!\n", .{});
-}
-
-export fn test1() usize {
-    return 1;
-}
-
-export fn test2(num1: usize, num2: usize) usize {
-    return num1 +| num2;
+export fn add(num1: i32, num2: i32) i32 {
+    return num1 + num2;
 }
